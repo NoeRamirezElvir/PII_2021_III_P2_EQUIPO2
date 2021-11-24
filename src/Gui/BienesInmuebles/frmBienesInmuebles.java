@@ -2,7 +2,6 @@ package Gui.BienesInmuebles;
 
 import Negocio.BienesInmuebles.BienesInmueblesNegocio;
 import Recursos.Clases.BienesInmuebles;
-import Recursos.Clases.Item;
 import Recursos.Clases.ItemCE;
 
 import javax.swing.*;

@@ -17,14 +17,11 @@ public class frmLogin extends JFrame{
     private JLabel lblNombreUsuario;
     private JLabel lblContraseña;
     private JTextField txtNombre;
-    private JTextField txtContraseña;
     private JPanel jpaBotones;
     private JButton aceptarButton;
     private JButton salirButton;
     private JButton crearUsuarioButton;
-
-
-
+    private JPasswordField psfContraseña;
 
     public frmLogin() {
         salirButton.addActionListener(new ActionListener() {
@@ -50,12 +47,12 @@ public class frmLogin extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 Usuario usuario = new Usuario();
                 usuario.setNombre(txtNombre.getText());
-                usuario.setClave(txtContraseña.getText());
+                usuario.setClave(new String(psfContraseña.getPassword()));
                 if((new UsuarioNegocio().validarUsuario(usuario))){
                     //Ventana Principal
                     frmPrincipal v = new frmPrincipal();
                     v.setVisible(true);
-                    txtContraseña.setText("");
+                    psfContraseña.setText("");
                     txtNombre.setText("");
                 }else{
                     JOptionPane.showMessageDialog(null, "Usuario o contraseña son incorrectos", "Error inicio de sesion", JOptionPane.ERROR_MESSAGE);
