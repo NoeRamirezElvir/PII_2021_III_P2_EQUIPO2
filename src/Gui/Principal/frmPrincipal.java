@@ -1,9 +1,13 @@
 package Gui.Principal;
 
+import Gui.Articulos.frmArticulos;
+import Gui.Factura.frmFactura;
+import Gui.Transporte.frmTransporte;
 import Gui.Personas.frmPersonas;
 import Gui.Cliente.frmCliente;
 import Gui.Empleado.frmEmpleado;
 import Gui.BienesInmuebles.frmBienesInmuebles;
+import Gui.BienesMuebles.frmBienesMuebles;
 import Gui.Casa.frmCasa;
 import Gui.Terreno.frmTerreno;
 
@@ -22,18 +26,21 @@ public class frmPrincipal extends JFrame{
     private JButton btnInmueble;
     private JButton btnCasa;
     private JButton btnTerreno;
+    private JButton btnBienesMuebles;
+    private JButton btnTransporte;
+    private JButton btnArticulos;
+    private JButton butnFactura;
     JFrame ventana = new JFrame();
 
     public frmPrincipal(){
-        setContentPane(this.jpaPrincipal);
+        setTitle("Bienes Muebles e Inmuebes");
+        setContentPane(jpaPrincipal);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         pack();
         setLocationRelativeTo(null);
         ImageIcon imagen = new ImageIcon("src/Recursos/Imagenes/Principal/principal.png");
         setIconImage(imagen.getImage());
-
-
         btnPersona.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -76,7 +83,34 @@ public class frmPrincipal extends JFrame{
                 v.setVisible(true);
             }
         });
+        btnBienesMuebles.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frmBienesMuebles bienMueble = new frmBienesMuebles();
+                bienMueble.setVisible(true);
+            }
+        });
+        btnTransporte.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frmTransporte emt = new frmTransporte();
+                emt.setVisible(true);
+            }
+        });
+        btnArticulos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frmArticulos art = new frmArticulos();
+                art.setVisible(true);
+            }
+        });
+        butnFactura.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frmFactura fact = new frmFactura();
+                fact.setVisible(true);
+            }
+        });
     }
-
 
 }
